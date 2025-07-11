@@ -8,7 +8,7 @@ public class Main {
         String message = keyboard.nextLine();
         for (int i = 0; i < 26; i++){
             obj.setKey(i);
-            String result = obj.recursionKey(message);
+            String result = obj.getKey() + " " + obj.recursionKey(message);            
             System.out.println(result);
         }
     }

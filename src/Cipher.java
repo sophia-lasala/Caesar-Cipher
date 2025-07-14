@@ -23,12 +23,21 @@ public class Cipher {
     }
 
     public void keyCalculator (int index, int key){
-        int total;
-        if ((index + key < 26)){
-            setNewIndex(index + key);
+        int total = index + key;
+        if ((total < 26)){
+            if (key >= 0) {
+                setNewIndex(index + key);
+            }
+            else{
+                if (Math.abs(index) < Math.abs(key)){
+                    setNewIndex(total + 26);
+                }
+                else{
+                    setNewIndex(total);
+                }
+            }
         }
-        else{
-            total = index + key;
+        else if ((total > 26)){
             setNewIndex(total - 26);
         }
     }
